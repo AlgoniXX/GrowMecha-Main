@@ -475,12 +475,7 @@ int main() {
 								}
 
 								else if (a_ == "quit_to_exit") {
-
-									if (pInfo(peer)->freshmen) {
-										join_world(peer, "TUTORIAL");
-										break;
-									}
-									else if (pInfo(peer)->currentWorld == "EXIT" or not state_guard(peer)) break;
+									if (pInfo(peer)->currentWorld == "EXIT" or not state_guard(peer)) break;
 									else {
 										left_world(peer), send_wo(peer), save_pinfo(peer);
 										Send_::console_msg(peer, "Where would you like to go? (`w" + to_string(serverplayer_c(peer)) + " `oonline)");
